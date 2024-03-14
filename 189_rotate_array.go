@@ -33,3 +33,24 @@ func RotateArray(nums []int, k int) {
 		target_index = rotated_index
 	}
 }
+
+// Alternate Approach
+// func Rotate(nums []int, k int)  {
+//     length := len(nums)
+//     k %= length
+//     count := 0
+//     start := 0
+//     for count < length {
+//         next_idx := start
+//         temp := nums[start]
+//         for {
+//             next_idx = (next_idx+k) % length
+//             temp, nums[next_idx] = nums[next_idx], temp
+//             count++
+//             if start == next_idx {
+//                 break
+//             }
+//         }
+//         start++
+//     }
+// }
