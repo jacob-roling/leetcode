@@ -1,16 +1,12 @@
 package leetcode
 
 func RemoveDuplicatesFromSortedArray(nums []int) int {
-	i := 0
-	j := 1
-	k := 1
-	for j < len(nums) {
-		if nums[i] != nums[j] {
-			nums[k] = nums[j]
-			k++
+	count := 1
+	for i := 1; i < len(nums); i++ {
+		if nums[count-1] != nums[i] {
+			nums[count] = nums[i]
+			count++
 		}
-		i++
-		j++
 	}
-	return k
+	return count
 }
