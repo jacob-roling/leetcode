@@ -21,3 +21,12 @@ func TestMajorityElementCase2(t *testing.T) {
 		t.Fail()
 	}
 }
+
+func TestMajorityElementCase3(t *testing.T) {
+	nums := []int{6, 5, 5}
+	expected := 5
+	result := MajorityElement(nums)
+	if expected != result {
+		t.Fail()
+	}
+}
