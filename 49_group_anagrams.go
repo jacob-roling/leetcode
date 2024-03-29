@@ -5,7 +5,7 @@ type Key [26]byte
 func GroupAnagrams(strs []string) [][]string {
 	groupMap := make(map[Key][]string)
 	for _, str := range strs {
-		key := strKey(str)
+		key := hashString(str)
 		groupMap[key] = append(groupMap[key], str)
 	}
 	groups := make([][]string, 0, len(groupMap))
@@ -15,7 +15,7 @@ func GroupAnagrams(strs []string) [][]string {
 	return groups
 }
 
-func strKey(str string) Key {
+func hashString(str string) Key {
 	var key Key
 
 	for i := range str {
